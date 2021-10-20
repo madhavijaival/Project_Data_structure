@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <!-- <meta> tells the browser to use the utf-8 character encoding when translating machine code into human-readable text and vice versa to be displayed in the browser-->
+     <!-- The HTML charset Attribute is used to specify the character encoding for the HTML document.-->
+    <meta charset="UTF-8" >
+    <title>Data Structure & Algorithm Documentation</title>
+    <link rel="stylesheet" href="style/style.css" >
+    <link rel="stylesheet" href="./style.css" >
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="header-bg">
+        <h1>Data Structure & Algorithm Documentation</h1>
+        <ul class="nav-link">
+           
+          <a href="index.html">
+            <li>Home</li>
+          </a>
+          <a href="intro.html">
+            <li>Introduction</li>
+          </a>
+          <a href="algo.html">
+            <li>Algorithm</li>
+          </a>
+          <a href="complexity.html">
+            <li>Complexity of Algorithm</li>
+          </a>
+          <a href="methods.html">
+            <li>Algorithm Approaches</li>
+          </a>
+          <a href="program.html">
+            <li>Dynamic programming</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section">
+        <header id="coin"><b>Dynamic Programming</b></header>
+        <h2>Cashier's Coin problem solution in JAVA program.</h2>
+        <section>
+          <pre><code>//Madhavi Jaival
+//Project1
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class Project1 {
+
+    public static void main(String[] args) {
+        Result();
+    }
+
+   
+    private static int[] getInput() {
+        Scanner sc = null;
+        try {
+            sc = new Scanner(new File("input.txt"));
+        } catch (FileNotFoundException e) {
+            System.out.println("Did you missed the input file?");
+            System.exit(1);
+        }
+        int p = 0, s = sc.nextInt();
+        int[] Dp = new int[s];
+        while (sc.hasNextInt()) {
+            Dp[p++] = sc.nextInt();
+        }
+        return Dp;
+    }
+
+    private static int CashCoin(int V, int[] Dp) {
+       
+     Vector<Integer> res = new Vector<>();
+        int n = Dp.length;
+        
+        for (int i = n - 1; i >= 0; i--) {
+           
+            while (V >= Dp[i]) {
+                V -= Dp[i];
+                res.add(Dp[i]);
+            }
+        }
+        return res.size();
+    }
+
+    private static int DyCoins(int[] Dp, int m, int V) {
+        
+        if (V == 0) return 0;
+
+        
+        int coin = Integer.MAX_VALUE;
+
+        
+        for (int i = 0; i < m; i++) {
+            if (Dp[i] <= V) {
+                int sub_res = DyCoins(Dp, m, V - Dp[i]);
+
+                
+                if (sub_res != Integer.MAX_VALUE && sub_res + 1 < coin)
+                    coin = sub_res + 1;
+            }
+        }
+        return coin;
+    }
+
+    private static void Result() {
+        int[] Dp = getInput();
+        int m = Dp.length;
+        int flag =0;
+        int cashierInc=0;
+
+        for (int V = 0; V <= 1000; ++V) {
+            int Cash = CashCoin(V, Dp);
+            int Dynamic = DyCoins(Dp, m, V);
+
+            if (Cash == Dynamic) {
+                flag=flag+1;
+            }
+            else {
+                cashierInc=cashierInc+1;
+                break;
+            }
+        }
+        if(cashierInc == 0)
+        {
+            System.out.println("NO DIFFERENCE");
+
+        }
+        else {
+            System.out.println("Cashiers incorrect for " +  flag);
+        }
+
+    }
+}</code></pre>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
