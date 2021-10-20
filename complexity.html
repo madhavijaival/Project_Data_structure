@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <!-- <meta> tells the browser to use the utf-8 character encoding when translating machine code into human-readable text and vice versa to be displayed in the browser-->
+     <!-- The HTML charset Attribute is used to specify the character encoding for the HTML document.-->
+    <meta charset="UTF-8" >
+    <title>Data Structure & Algorithm Documentation</title>
+    <link rel="stylesheet" href="style/style.css" >
+    <link rel="stylesheet" href="./style.css" >
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="header-bg">
+        <h1>Data Structure & Algorithm Documentation</h1>
+        <ul class="nav-link">
+           <a href="index.html">
+            <li>Home</li>
+          </a>
+          <a href="intro.html">
+            <li>Introduction</li>
+          </a>
+          <a href="algo.html">
+            <li>Algorithm</li>
+          </a>
+
+          <a href="complexity.html">
+            <li>Complexity of Algorithm</li>
+          </a>
+          <a href="methods.html">
+            <li>Algorithm Approaches</li>
+          </a>
+           <a href="program.html">
+            <li>Dynamic programming</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section">
+        <header><b>Algorithm Complexity</b></header>
+
+        <article>
+          <section>
+            <h3>Types of complexity</h3>
+            <ul>
+              <li>Time complexity</li>
+              <p>
+                The amount of time required to finish an algorithm's execution
+                is known as its time complexity. The large O notation is used to
+                express an algorithm's time complexity. The asymptotic notation
+                used to describe the temporal complexity is big O notation. The
+                time complexity is mostly determined by counting the number of
+                steps required to complete the task.
+              </p>
+
+              <li>Space complexity</li>
+<!--- *******<wbr> used for the break word ************-->
+              <p>
+                The quantity of space required to solve a problem and create an
+                output is the space complexity of an algorithm. Space<wbr>complexity 
+                is written in big O notation in the same way that time
+                complexity is.
+              </p>
+            </ul>
+          </section>
+          <section>
+            <h3>Asymptotic Notation</h3>
+            <p>
+              Data structure is a method of efficiently arranging data, and
+              efficiency may be evaluated in terms of time or space. As a
+              result, the optimal data structure is one that takes the least
+              amount of time and memory space to complete all of its operations.
+              We'd focus on time complexity rather than space complexity, and by
+              determining time complexity,we'd be able to determine which data
+              structure is optimal for an algorithm.
+            </p>
+
+            <p>
+              The following are some of the most used asymptotic notations for
+              calculating an algorithm's running time complexity.
+            </p>
+            <ol>
+              <div>
+                <em><strong><li>Big Ο Notation</li></strong></em>
+                <p>
+                  The upper bound of an algorithm's execution time is expressed
+                  using the notation O(n). It calculates the worst-case time
+                  complexity, or the time it will take an algorithm to finish.
+                </p>
+                For example, for a function f(n)<br />
+                <pre><code>Ο(f(n)) = { g(n) : there exists c > 0 and n0 such that f(n) ≤ c.g(n) for all n > n0. }</code></pre>
+                <img src="https://cdn.glitch.com/f0ff2ca9-78df-400b-a2b9-5cb4587ec542%2Fc5a80676-d348-4f45-a6ac-6cb8f1516cfe.image.png?v=1632863573404"  alt="HTML"
+                width="300"
+                height="200"
+                class="center">
+                
+              </div>
+              <div>
+                <em
+                  ><strong><li>Omega &#8486; Notation</li></strong></em
+                >
+                <p>
+                  The lowest bound of an algorithm's execution time is expressed
+                  using the notation (n). It determines the worst-case time
+                  complexity, or how long an algorithm can take to finish.
+                </p>
+                For example, for a function f(n)<br />
+                <pre><code>Ω(f(n)) ≥ { g(n) : there exists c > 0 and n0 such that g(n) ≤ c.f(n) for all n > n0. }</code></pre>
+                <img src="https://cdn.glitch.com/f0ff2ca9-78df-400b-a2b9-5cb4587ec542%2F6be25da1-9192-4683-a42b-221b76a2580d.image.png?v=1632863601062"  alt="HTML"
+                width="300"
+                height="240"
+                class="center">
+              </div>
+              <div>
+                <em
+                  ><strong><li>Theta &Theta; Notation</li></strong></em>
+                <p>
+                  The formal approach to describe both the lower limit and upper
+                  bound of an algorithm's execution time is the notation (n).
+                </p>
+                For example, for a function f(n)<br />
+                <pre><code>θ(f(n)) = { g(n) if and only if g(n) =  Ο(f(n))and g(n) = Ω(f(n)) for all n > n0. }</code></pre>
+                <img src="https://cdn.glitch.com/f0ff2ca9-78df-400b-a2b9-5cb4587ec542%2F81f1c8dc-4bab-4e3a-b616-0875b5b5ccca.image.png?v=1632863657018"  alt="HTML"
+                width="300"
+                height="500"
+                class="center">
+              </div>
+            </ol>
+          </section>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
