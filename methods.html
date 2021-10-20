@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <!-- <meta> tells the browser to use the utf-8 character encoding when translating machine code into human-readable text and vice versa to be displayed in the browser-->
+    <!-- The HTML charset Attribute is used to specify the character encoding for the HTML document.-->
+    <meta charset="UTF-8" >
+    <title>Data Structure & Algorithm Documentation</title>
+    <link rel="stylesheet" href="style/style.css" >
+    <link rel="stylesheet" href="./style.css" >
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="header-bg">
+        <h1>Data Structure & Algorithm Documentation</h1>
+        <ul class="nav-link">
+           <a href="index.html">
+            <li>Home</li>
+          </a>
+          <a href="intro.html">
+            <li>Introduction</li>
+          </a>
+          <a href="algo.html">
+            <li>Algorithm</li>
+          </a>
+          <a href="complexity.html">
+            <li>Complexity of Algorithm</li>
+          </a>
+          <a href="methods.html">
+            <li>Algorithm Approaches</li>
+          </a>
+           <a href="program.html">
+            <li>Dynamic programming</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section">
+        <header><b>Algorithm approaches</b></header>
+        <article>
+          <p>
+            There are various widely accepted algorithmic techniques that
+            provide a tried-and-true method or procedure for designing and
+            building algorithms. Depending on the goal, different strategies may
+            be utilized.
+          </p>
+          <section>
+            <h3>Brute force algorithm:</h3>
+
+            <p>
+              To develop an algorithm, the general logic structure is used. It's
+              also known as an extensive search algorithm because it looks at
+              all options in order to find the best one. There are two types of
+              such algorithms:
+            </p>
+            <ol>
+              <li>
+                Optimization:<br />
+                Finding all possible solutions to a problem and then selecting
+                the best one, or terminating if the best solution's value is
+                known.
+              </li>
+
+              <li>
+                Sacrificing:<br />
+                It will come to an end whenever the best answer has been
+                identified
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h3>Divide and conquer:</h3>
+            <p>
+              It's an extremely specific implementation of an algorithm. It
+              enables you to create an algorithm in a step-by-step fashion. It
+              deconstructs the algorithm to solve the problem in several ways.
+              It enables you to divide the problem into different techniques,
+              and valid output is generated for valid input. This valid output
+              is forwarded to another function.
+            </p>
+            Example of divide and conquer problem:
+            <pre><code>Problem: Counting Inversions
+    Input: array of integer, X []
+    Output: How many inversions are there? If sorted, 0. For N pairs, it will N choose 2.
+     How many pairs (i, j), i < j, have X [i] > X [j]? If sorted, 0.</code></pre>
+            <pre><code>
+  Problem: Channel Allocation
+  Suggested Algorithm: iterated Earliest Finishing Time
+     {(1, 10), (9, 12), (14, 15), (11, 20)}
+
+Ex: 9, 4, 12, 2, 17, 7, 16, 5, 13, 11, 3, 8, 14, 1
+
+9, 4, 12, 2, 17, 7, 16: 8 inversions
+5, 13, 11, 4, 8, 14, 1: 12 inversions
+
+
+</code></pre>
+          </section>
+          <section>
+            <h3>Greedy algorithm:</h3>
+            <p>
+              It is an algorithm paradigm that chooses the best option on each
+              iteration in the hope of finding the best solution. It is simple
+              to apply and takes less time to complete. However, there are a few
+              instances where it is the best approach.
+            </p>
+            Exapmle of greedy method:
+            <pre><code>FIRST ALGORITHM: SHORT
+while (there are still intervals)
+{
+take the shortest interval
+discard intervals that overlap
+}
+Ex: {(1, 10), (12, 20), (9, 13)}:
+{(9, 13)} SHORT
+{(1, 10), (12, 20)} Better output because more intervals
+</code></pre>
+            <pre><code>SECOND ALGORITHM: EARLIEST FINISH TIME 
+while (there are still intervals)
+{
+take the interval that finishes soonest
+discard intervals that overlap
+}
+Ex: {(1, 10), (12, 20), (9, 13)}:
+{(1, 10), (12, 20)} Earliest Finish Time
+
+</code></pre>
+          </section>
+          <section>
+            <h3>Dynamic programming</h3>
+            <p>
+              It improves the efficiency of the algorithm by storing
+              intermediate outcomes. It goes through five processes to identify
+              the best solution to the problem. To discover the best solution,
+              it divides the problem into subproblems. here the large problem have more recursive solve problem and there are my possibilities of this problem such as coin change which is really well known problem in this approach, I have solved it by using java program <a href="program.html#coin"> in program file.</a>
+            </p>
+            <ol>
+              <li>
+                It finds the best solution out of these subproblems after
+                breaking down the problem.
+              </li>
+              <li>
+                Memorization is the process of storing the results of
+                subproblems.
+              </li>
+              <li>
+                Reuse the result to prevent it from being recomputed for the
+                same subproblems.
+              </li>
+              <li>Finally, it computes the complex program's output.</li>
+            </ol>
+          </section>
+          <section>
+            <h3>Branch and Bound Algorithm:</h3>
+            <p>
+              Only integer programming problems can be solved using the branch
+              and bound approach. This method separates all feasible solution
+              sets into smaller subgroups. These subgroups are then assessed
+              further in order to discover the optimal solution.
+            </p>
+          </section>
+          <section>
+            <h3>Backtracking</h3>
+            <p>
+              Backtracking is an algorithmic technique that recursively solves a
+              problem and discards solutions that do not satisfy the problem's
+              requirements.
+            </p>
+          </section>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
